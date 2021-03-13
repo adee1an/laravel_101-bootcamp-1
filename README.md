@@ -17,3 +17,8 @@
     > [/database/seeds/DatabaseSeeder.php](/database/seeds/DatabaseSeeder.php)
 - `composer dump-autoload`
 - `php artisan db:seed`
+
+### คำสั่งในการสร้าง Controller
+- `php artisan make:controller PostController` // PostController ชื่อ controller
+    > [/app/Http/Controllers/PostController.php](/app/Http/Controllers/PostController.php)
+- กำหนด Route [/routes/web.php](/routes/web.php)
