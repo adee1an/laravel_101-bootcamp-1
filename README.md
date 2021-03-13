@@ -13,7 +13,7 @@
 - `php artisan make:factory PostFactory --model=Post` // PostFactory ชื่อ factory // Post ชื่อ model 
     > [/database/factories/PostFactory.php](/database/factories/PostFactory.php)
 - `php artisan make:seeder PostsTableSeeder` //Posts ชื่อ seeder
-    > [/database/seeds/PostsTableSeeder.php](/database/seeds/PostsTableSeeder.php)
+    > [/database/seeds/PostsTableSeeder.php](/database/seeds/PostsTableSeeder.php) <br/>
     > [/database/seeds/DatabaseSeeder.php](/database/seeds/DatabaseSeeder.php)
 - `composer dump-autoload`
 - `php artisan db:seed`
