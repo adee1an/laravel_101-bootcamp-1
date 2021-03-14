@@ -2,7 +2,7 @@
 
 @section('content')
 <h2>แก้ไขรายการ Post #{{ $result->id }}</h2>
-<form method="POST" action="{{ route('update', $result->id) }}">
+<form method="POST" action="{{ route('post.update', $result->id) }}">
     @csrf
     {{ method_field('PUT') }}
     <div class="form-group">

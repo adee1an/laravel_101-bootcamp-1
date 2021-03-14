@@ -1,8 +1,8 @@
 @extends('layout.master')
 
 @section('content')
-<h2>สร้างรายการ Post</h2>
-<form method="POST" action="{{ route('store') }}">
+<h2>สร้างรายการ Comment</h2>
+<form method="POST" action="{{ route('comment.store') }}">
     @csrf
     <div class="form-group">
         <label>หัวข้อ</label>

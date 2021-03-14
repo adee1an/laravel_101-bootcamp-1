@@ -1,8 +1,8 @@
 @extends('layout.master')
 
 @section('content')
-<h2>ข้อมูลรายการ Post</h2>
-<a href="{{ route('create') }}">+ สร้างรายการใหม่</a>
+<h2>ข้อมูลรายการ Comment</h2>
+<a href="{{ route('comment.create') }}">+ สร้างรายการใหม่</a>
 <table class="table">
     <thead>
         <tr>
@@ -19,10 +19,10 @@
             <td>{{ $value->title }}</td>
             <td>{{ $value->created_at }}</td>
             <td width="1" class="text-nowrap">
-                <form method="POST" action="{{ route('destroy', $value->id) }}">
+                <form method="POST" action="{{ route('comment.destroy', $value->id) }}">
                     @csrf
                     {{ method_field('DELETE') }}
-                    <a class="btn btn-info btn-sm" href="{{ route('edit', $value->id) }}"><i class="fas fa-pen-square"></i> แก้ไขข้อมูล</a>
+                    <a class="btn btn-info btn-sm" href="{{ route('comment.edit', $value->id) }}"><i class="fas fa-pen-square"></i> แก้ไขข้อมูล</a>
                     <button type="submit" class="btn btn-sm btn-danger" onclick="return confirm('ท่านต้องการลบรายการ '+{{ $value->id }}+' นี้ใช่หรือไม่ ?');"><i class="fas fa-trash-alt"></i> ยกเลิก</button>
                 </form>
             </td>

@@ -31,7 +31,12 @@
                     <li class="nav-item">
                         <a class="nav-link" href="/">เกี่ยวกับเรา</a>
                     </li>
-
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ route('post.index') }}">รายการ Post</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ route('comment.index') }}">รายการ Comment</a>
+                    </li>
                 </ul>
             </div>
         </div>
