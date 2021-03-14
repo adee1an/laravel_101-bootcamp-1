@@ -6,6 +6,18 @@
 - `php artisan make:migration create_posts_table` //สร้างตารางฐานข้อมูล
 - `php artisan migrate`
 
+### Clone โปรเจค
+> https://github.com/taveevut/laravel_101-bootcamp<br/>
+> copy: https://github.com/taveevut/laravel_101-bootcamp.git
+
+
+- `git clone https://github.com/taveevut/laravel_101-bootcamp.git && cd laravel_101-bootcamp/`
+- code.
+- composer install
+- duplicate `.evn.example` and replace to `.env`
+- ` change connection: `DB_DATABASE`
+- `php artisan key:generate`
+- `php artisan serve`
 
 ### คำสั่งในการจำลองข้อมูล
 - `php artisan make:model Post` // Post ชื่อ model
@@ -17,8 +29,3 @@
     > [/database/seeds/DatabaseSeeder.php](/database/seeds/DatabaseSeeder.php)
 - `composer dump-autoload`
 - `php artisan db:seed`
-
-### คำสั่งในการสร้าง Controller
-- `php artisan make:controller PostController` // PostController ชื่อ controller
-    > [/app/Http/Controllers/PostController.php](/app/Http/Controllers/PostController.php)
-- กำหนด Route [/routes/web.php](/routes/web.php)
