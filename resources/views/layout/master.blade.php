@@ -2,50 +2,62 @@
 <html lang="en">
 
 <head>
-    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta name="description" content="Vali is a responsive and free admin theme built with Bootstrap 4, SASS and PUG.js. It's fully customizable and modular.">
+    <!-- Twitter meta-->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:site" content="@pratikborsadiya">
+    <meta property="twitter:creator" content="@pratikborsadiya">
+    <!-- Open Graph Meta-->
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Vali Admin">
+    <meta property="og:title" content="Vali - Free Bootstrap 4 admin theme">
+    <meta property="og:url" content="http://pratikborsadiya.in/blog/vali-admin">
+    <meta property="og:image" content="http://pratikborsadiya.in/blog/vali-admin/hero-social.png">
+    <meta property="og:description" content="Vali is a responsive and free admin theme built with Bootstrap 4, SASS and PUG.js. It's fully customizable and modular.">
+    <title>Blank Page - Vali Admin</title>
     <meta charset="utf-8">
-    <title>แสดงข้อมูลรายการ</title>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" integrity="sha512-HK5fgLBL+xu6dm/Ii3z4xhlSUyZgTT9tuc/hSrtw6uzJOvgRr2a9jyxxT1ely+B+xFAmJKVSTbpM/CuL7qxO8w==" crossorigin="anonymous" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Main CSS-->
+    <link rel="stylesheet" type="text/css" href="{{ asset('assets/vali-admin/css/main.css') }}">
+    <!-- Font-icon css-->
+    <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <link href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-bs4.min.css" rel="stylesheet">
 </head>
 
-<body>
-    <nav class="navbar navbar-dark bg-dark navbar-expand-md mb-5">
-        <div class="container">
-            <a class="navbar-brand" href="#">
-                L-Bootcamp
-            </a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
-
-                <i class="fas fa-bars"></i>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarCollapse">
-                <ul class="navbar-nav ml-auto">
-                    <li class="nav-item">
-                        <a class="nav-link" href="/">หน้าแรก <span class="sr-only">(current)</span></a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="/">ติดต่อเรา</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="/">เกี่ยวกับเรา</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="{{ route('post.index') }}">รายการ Post</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="{{ route('comment.index') }}">รายการ Comment</a>
-                    </li>
+<body class="app sidebar-mini">
+    <!-- Navbar-->
+    <header class="app-header"><a class="app-header__logo" href="index.html">Vali</a>
+        <!-- Sidebar toggle button--><a class="app-sidebar__toggle" href="#" data-toggle="sidebar" aria-label="Hide Sidebar"></a>
+        <!-- Navbar Right Menu-->
+        <ul class="app-nav">
+            <li class="app-search">
+                <input class="app-search__input" type="search" placeholder="Search">
+                <button class="app-search__button"><i class="fa fa-search"></i></button>
+            </li>
+            <!-- User Menu-->
+            <li class="dropdown"><a class="app-nav__item" href="#" data-toggle="dropdown" aria-label="Open Profile Menu"><i class="fa fa-user fa-lg"></i></a>
+                <ul class="dropdown-menu settings-menu dropdown-menu-right">
+                    <li><a class="dropdown-item" href="page-user.html"><i class="fa fa-cog fa-lg"></i> Settings</a></li>
+                    <li><a class="dropdown-item" href="page-user.html"><i class="fa fa-user fa-lg"></i> Profile</a></li>
+                    <li><a class="dropdown-item" href="page-login.html"><i class="fa fa-sign-out fa-lg"></i> Logout</a></li>
                 </ul>
-            </div>
-        </div>
-    </nav>
+            </li>
+        </ul>
+    </header>
 
-    <div class="container">
+    @include('layout.sidebar')
+
+    <main class="app-content">
         @yield('content')
-    </div>
-    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    </main>
+    <!-- Essential javascripts for application to work-->
+    <script src="{{ asset('assets/vali-admin/js/jquery-3.3.1.min.js') }}"></script>
+    <script src="{{ asset('assets/vali-admin/js/popper.min.js') }}"></script>
+    <script src="{{ asset('assets/vali-admin/js/bootstrap.min.js') }}"></script>
+    <script src="{{ asset('assets/vali-admin/js/main.js') }}"></script>
+    <!-- The javascript plugin to display page loading on top-->
+    <script src="{{ asset('assets/vali-admin/js/plugins/pace.min.js') }}"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-bs4.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.18/lang/summernote-th-TH.min.js" integrity="sha512-PrQB8x9RCkqM/BXT6I/rlX2NTCFBNyaCGL7PNtDZDclXSrjC3fLL9N5N/qY3tNkcPEHj14stwkTqEWKOo+KdFQ==" crossorigin="anonymous"></script>

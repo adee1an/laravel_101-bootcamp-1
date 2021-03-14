@@ -31,7 +31,7 @@ class PostController extends Controller
     {
         $result = Post::find($id); // SELECT * FROM posts WHERE id = $id
 
-        return view('post.edit', compact('result'));
+        return view('post::edit', compact('result'));
     }
 
     public function update(Request $request, $id)

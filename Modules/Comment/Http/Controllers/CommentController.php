@@ -31,7 +31,7 @@ class CommentController extends Controller
     {
         $result = Comment::find($id); // SELECT * FROM comments WHERE id = $id
 
-        return view('comment.edit', compact('result'));
+        return view('comment::edit', compact('result'));
     }
 
     public function update(Request $request, $id)
