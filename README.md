@@ -15,7 +15,7 @@
 - code.
 - composer install
 - duplicate `.evn.example` and replace to `.env`
-- ` change connection: `DB_DATABASE`
+- change connection: `DB_DATABASE`
 - `php artisan key:generate`
 - `php artisan serve`
 
