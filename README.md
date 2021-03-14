@@ -29,3 +29,20 @@
     > [/database/seeds/DatabaseSeeder.php](/database/seeds/DatabaseSeeder.php)
 - `composer dump-autoload`
 - `php artisan db:seed`
+
+### ติดตั้ง Laravel Module
+> อ้างอิง: https://nwidart.com/laravel-modules/v6/installation-and-setup
+- `composer require nwidart/laravel-modules`
+- `php artisan vendor:publish --provider="Nwidart\Modules\LaravelModulesServiceProvider"`
+- เปิดไฟล์ `composer.json` แล้วหา `psr-4`
+    ```json
+    {
+        "autoload": {
+            "psr-4": {
+                "App\\": "app/",
+                "Modules\\": "Modules/"
+            }
+        }
+    }
+    ```
+- รันคำสั่ง `composer dump-autoload`
