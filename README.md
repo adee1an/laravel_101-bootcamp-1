@@ -1,5 +1,5 @@
 # Larvel 101 - Bootcamp
-> ลิงค์ดาวโหลด:  https://laravel.com/docs/7.x/installation
+> Reference:  https://laravel.com/docs/7.x/installation
 ## Note
 - `composer global require laravel/installer`  // ติดตั้งแค่ครั้งเดียว
 - `composer create-project --prefer-dist laravel/laravel:^7.0 blog` // blog เป็นชื่อโปรเจค
@@ -31,7 +31,8 @@
 - `php artisan db:seed`
 
 ### ติดตั้ง Laravel Module
-> อ้างอิง: https://nwidart.com/laravel-modules/v6/installation-and-setup
+> Reference: https://nwidart.com/laravel-modules/v6/installation-and-setup <br />
+> Artisan commands : https://nwidart.com/laravel-modules/v6/advanced-tools/artisan-commands
 - `composer require nwidart/laravel-modules`
 - `php artisan vendor:publish --provider="Nwidart\Modules\LaravelModulesServiceProvider"`
 - เปิดไฟล์ `composer.json` แล้วหา `psr-4`
