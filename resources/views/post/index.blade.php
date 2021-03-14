@@ -6,6 +6,7 @@
     <meta charset="utf-8">
     <title>แสดงข้อมูลรายการ</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" integrity="sha512-HK5fgLBL+xu6dm/Ii3z4xhlSUyZgTT9tuc/hSrtw6uzJOvgRr2a9jyxxT1ely+B+xFAmJKVSTbpM/CuL7qxO8w==" crossorigin="anonymous" />
 </head>
 
 <body>
@@ -47,7 +48,14 @@
                     <th scope="row">{{ $lists->firstItem() + $index }}</th>
                     <td>{{ $value->title }}</td>
                     <td>{{ $value->created_at }}</td>
-                    <td>@mdo</td>
+                    <td width="1" class="text-nowrap">
+                        <form method="POST" action="{{ route('destroy', $value->id) }}">
+                            @csrf
+                            {{ method_field('DELETE') }}
+                            <a class="btn btn-info btn-sm" href="{{ route('edit', $value->id) }}"><i class="fas fa-pen-square"></i> แก้ไขข้อมูล</a>
+                            <button type="submit" class="btn btn-sm btn-danger" onclick="return confirm('ท่านต้องการลบรายการ '+{{ $value->id }}+' นี้ใช่หรือไม่ ?');"><i class="fas fa-trash-alt"></i> ยกเลิก</button>
+                        </form>
+                    </td>
                 </tr>
                 @endforeach
             </tbody>

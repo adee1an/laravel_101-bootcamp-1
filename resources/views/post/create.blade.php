@@ -6,6 +6,8 @@
     <meta charset="utf-8">
     <title>แสดงข้อมูลรายการ</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <!-- include summernote css/js -->
+    <link href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-bs4.min.css" rel="stylesheet">
 </head>
 
 <body>
@@ -52,13 +54,26 @@
             </div>
             <div class="form-group">
                 <label>รายละเอียด</label>
-                <textarea name="detail" cols="40" rows="5" class="form-control" placeholder="ระบุรายละเอียด"></textarea>
+                <textarea name="detail" id="summernote" cols="40" rows="5" class="form-control" placeholder="ระบุรายละเอียด"></textarea>
             </div>
 
 
             <button type="submit" class="btn btn-primary">บันทึก</button>
         </form>
     </div>
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-bs4.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.18/lang/summernote-th-TH.min.js" integrity="sha512-PrQB8x9RCkqM/BXT6I/rlX2NTCFBNyaCGL7PNtDZDclXSrjC3fLL9N5N/qY3tNkcPEHj14stwkTqEWKOo+KdFQ==" crossorigin="anonymous"></script>
+    <script>
+        $(document).ready(function() {
+            $('#summernote').summernote({
+                lang: 'th-TH',
+                tabsize: 2,
+                height: 250
+            });
+        });
+    </script>
 </body>
 
 </html>

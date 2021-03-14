@@ -9,7 +9,7 @@ class PostController extends Controller
 {
     public function index()
     {
-        $lists = Post::orderBy('id', 'DESC')->paginate(20);
+        $lists = Post::orderBy('id', 'DESC')->paginate(20); // SELECT * FROM post ORDER id DESC
 
         return view("post.index", compact('lists'));
     }
@@ -28,11 +28,22 @@ class PostController extends Controller
 
     public function edit($id)
     {
-        return "แก้ไขรายการข้อมูล {$id}";
+        $result = Post::find($id); // SELECT * FROM posts WHERE id = $id
+
+        return view('post.edit', compact('result'));
+    }
+
+    public function update(Request $request, $id)
+    {
+        Post::find($id)->update($request->all()); // UPDATE post SET ..., ..., WHERE id = $id
+
+        return redirect()->route('index');
     }
 
     public function destroy($id)
     {
-        return "ลบรายการข้อมูล {$id}";
+        Post::find($id)->delete();
+
+        return redirect()->route('index');
     }
 }
