@@ -1,9 +1,9 @@
-@extends('layout.master')
+@extends('layouts.admin.master')
 
 @section('content')
 <div class="app-title">
     <div>
-        <h1><i class="fa fa-dashboard"></i> Post</h1>
+        <h1><i class="fa fa-pencil-square" aria-hidden="true"></i> Post</h1>
         <p>Start a beautiful journey here</p>
     </div>
     <ul class="app-breadcrumb breadcrumb">

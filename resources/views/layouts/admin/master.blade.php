@@ -46,7 +46,7 @@
         </ul>
     </header>
 
-    @include('layout.sidebar')
+    @include('layouts.admin.sidebar')
 
     <main class="app-content">
         @yield('content')
